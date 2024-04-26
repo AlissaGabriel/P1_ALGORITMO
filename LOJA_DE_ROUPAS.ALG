@@ -91,7 +91,7 @@ Inicio
                Se(qnt_item > quantidade[opcao])ou (qnt_item <= 0)entao
                   Escreval("Quantidade de itens inválida, NÃO PODE!!!")
                Fimse
-            Ate(qnt_item < quantidade[opcao]) e (qnt_item > 0)
+            Ate(qnt_item <= quantidade[opcao]) e (qnt_item > 0)
 
 
             //cada se calcula o subtotal de cada item do vetor
@@ -137,12 +137,13 @@ Inicio
             Leia(pagamento)
          Ate(pagamento>0) e (pagamento<5)
 
+         para i de 1 ate 4 faca
+            soma_total <- soma_total + valor_total_item[i]
+         fimpara
+
          //caso forma de pagamento escolhida for dinheiro, calcula o desconto
          Se(pagamento=4)entao
             //percorre o subtotal de cada item e armazena em um acumulador
-            para i de 1 ate 4 faca
-               soma_total <- soma_total + valor_total_item[i]
-            fimpara
             desconto <- soma_total * 0.1
             Escreval("")
             soma_total <- soma_total - desconto
