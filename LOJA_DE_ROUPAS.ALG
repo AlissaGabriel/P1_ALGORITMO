@@ -75,15 +75,23 @@ Inicio
 
             Escreval("")
 
+            Escreval("Estoque: ")
+            Escreval("Item", " ", " ","Quantidade")
+            //para : para percorrer todos os vetores e listar o estoque
+            Para i de 1 ate 4 faça
+               Escreval(itemRoupa[i], "   ", quantidade[i])
+            Fimpara
+
+            Escreval("")
             //pede a quantidade de itens
             Repita
                Escreval("Informe a quantidade de itens que deseja:")
                Leia(qnt_item)
                Escreval("")
-               Se(qnt_item > quantidade[opcao])entao
-                  Escreval("Quantidade de itens maior que o estoque, NÃO PODE!!!")
+               Se(qnt_item > quantidade[opcao])ou (qnt_item <= 0)entao
+                  Escreval("Quantidade de itens inválida, NÃO PODE!!!")
                Fimse
-            Ate(qnt_item < quantidade[opcao])
+            Ate(qnt_item < quantidade[opcao]) e (qnt_item > 0)
 
 
             //cada se calcula o subtotal de cada item do vetor
